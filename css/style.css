@@ -1,0 +1,761 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header-3d {
+    background: linear-gradient(135deg, #90EE90, #008080);
+    padding: 15px 5%;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.floating-icons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.icon-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu-btn {
+    padding: 8px;
+    font-size: 1.2rem;
+}
+
+#profile-btn {
+    padding: 8px;
+    font-size: 1.2rem;
+}
+
+#language-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Menu Popup Styles */
+.menu-popup {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    padding: 10px 0;
+    min-width: 180px;
+    animation: fadeIn 0.2s ease-out;
+    position: absolute;
+    right: 0;
+    top: 100%;
+}
+
+.menu-popup ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-popup li {
+    margin: 0;
+}
+
+.menu-popup a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.menu-popup a:hover {
+    background: #f0f0f0;
+    color: #008080;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation Keyframes */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotateX(0deg); }
+    50% { transform: translateY(-10px) rotateX(5deg); }
+}
+
+/* Introduction Section */
+.intro-section {
+    padding: 50px 10%;
+    text-align: center;
+    background-color: white;
+}
+
+.intro-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #008080;
+}
+
+.intro-section p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Scrolling Text */
+.scrolling-text-container {
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin: 40px 0;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.scrolling-text-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    animation: scrollText 20s linear infinite;
+}
+
+.scrolling-text {
+    padding: 0 10%;
+    font-size: 1.1rem;
+    color: #333;
+    text-align: center;
+}
+
+@keyframes scrollText {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+}
+
+/* Video Section */
+.video-section {
+    padding: 40px 10%;
+    background: linear-gradient(to bottom, #f5f5f5, #e0f7fa);
+}
+
+.video-container {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: perspective(1000px) rotateX(5deg);
+}
+
+video {
+    width: 100%;
+    display: block;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 10%;
+    background-color: white;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #008080;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 40px;
+}
+
+.testimonial-card {
+    min-width: 300px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 128, 128, 0.2);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    scroll-snap-align: start;
+    border: 1px solid #e0e0e0;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px) rotateY(10deg);
+}
+
+.user-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 3px solid #90EE90;
+}
+
+.user-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-card h3 {
+    margin: 10px 0;
+    color: #008080;
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #555;
+}
+
+/* Modal Form */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #008080;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #008080;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Password Fields Specific Styles */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+/* Form Hints and Validation */
+.form-hint {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+    width: auto;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* Password Strength Meter */
+.password-strength {
+    height: 4px;
+    background: #eee;
+    margin-top: 8px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.password-strength::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #ff0000;
+    transition: width 0.3s, background 0.3s;
+}
+
+.password-strength.weak::before {
+    width: 30%;
+    background: #ff4444;
+}
+
+.password-strength.medium::before {
+    width: 60%;
+    background: #ffbb33;
+}
+
+.password-strength.strong::before {
+    width: 100%;
+    background: #00C851;
+}
+
+/* Buttons */
+.btn-teal {
+    background: #008080;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.btn-teal:hover {
+    background: #006666;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 128, 128, 0.3);
+}
+
+.btn-green {
+    background: #90EE90;
+    color: #333;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.btn-green:hover {
+    background: #7DCE7D;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(144, 238, 144, 0.3);
+}
+
+.btn-cyan {
+    background: #00FFFF;
+    color: #333;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.btn-cyan:hover {
+    background: #00E5E5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Signup Options */
+.signup-options {
+    padding: 60px 10%;
+    text-align: center;
+    background: linear-gradient(to bottom, #e0f7fa, #f5f5f5);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Login/Signup Pages */
+.auth-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #008080;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-switch a {
+    color: #008080;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* File Input Styling */
+.file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+}
+
+.file-input-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.file-input-button:hover {
+    background: #e0e0e0;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-name {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Alert System */
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideIn 0.3s ease-out;
+}
+
+.custom-alert.error {
+    background-color: #e74c3c;
+}
+
+.custom-alert.success {
+    background-color: #2ecc71;
+}
+
+.custom-alert.info {
+    background-color: #3498db;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* 3D Container */
+#3d-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1.8rem;
+    }
+    
+    .logo-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .floating-icons {
+        margin-top: 10px;
+    }
+    
+    .icon-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    #menu-btn, #profile-btn {
+        padding: 6px;
+        font-size: 1.1rem;
+    }
+    
+    .menu-popup {
+        position: fixed !important;
+        top: 70px !important;
+        right: 20px !important;
+        left: 20px !important;
+        width: auto !important;
+    }
+    
+    .intro-section {
+        padding: 30px 5%;
+    }
+    
+    .video-container {
+        width: 95%;
+    }
+    
+    .testimonial-carousel {
+        gap: 20px;
+    }
+    
+    .signup-options {
+        padding: 40px 5%;
+    }
+    
+    .auth-container {
+        padding: 30px 20px;
+        margin: 30px auto;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .floating-icons {
+        gap: 8px;
+    }
+    
+    .icon-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+    
+    #language-btn {
+        padding: 5px 8px;
+    }
+    
+    #menu-btn, #profile-btn {
+        padding: 5px;
+        font-size: 1rem;
+    }
+    
+    .scrolling-text {
+        font-size: 0.9rem;
+    }
+    
+    .testimonial-card {
+        min-width: 250px;
+    }
+    
+    .btn-green, .btn-cyan, .btn-teal {
+        width: 100%;
+    }
+    
+    .auth-container {
+        margin: 20px auto;
+        padding: 20px 15px;
+    }
+    /* Add these styles to your existing CSS */
+    .menu-popup {
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        padding: 10px 0;
+        min-width: 180px;
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    .menu-popup ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu-popup li {
+        margin: 0;
+    }
+
+    .menu-popup a {
+        display: block;
+        padding: 10px 20px;
+        color: #333;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+
+    .menu-popup a:hover {
+        background: #f0f0f0;
+        color: #008080;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        .menu-popup {
+            background: #333;
+        }
+        .menu-popup a {
+            color: #f5f5f5;
+        }
+        .menu-popup a:hover {
+            background: #444;
+        }
+    }
+}
