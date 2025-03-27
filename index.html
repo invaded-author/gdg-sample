@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSuvidha - Solutions from AI to critical problems</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Scrolling text animation */
+        .scrolling-text-container {
+            height: 150px;
+            overflow: hidden;
+            position: relative;
+            margin: 40px 0;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        
+        .scrolling-text-box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            animation: scrollText 20s linear infinite;
+        }
+        
+        @keyframes scrollText {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(-100%); }
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .intro-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .scrolling-text {
+                font-size: 0.9rem;
+                padding: 0 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-3d">
+        <div class="logo-container">
+            <h1 class="logo-text" data-hi="एग्रोसुविधा">AgroSuvidha</h1>
+            <div class="floating-icons">
+                <button id="menu-btn" class="icon-btn" aria-label="Menu" data-hi="मेनू">☰ <span class="sr-only">Menu</span></button>
+                <button id="profile-btn" class="icon-btn" aria-label="Profile" data-hi="प्रोफ़ाइल">👤 <span class="sr-only">Profile</span></button>
+                <button id="language-btn" class="icon-btn" aria-label="Change language to Hindi" data-en="हिंदी" data-hi="English">हिंदी</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <h2 data-hi="AI के साथ कृषि क्रांति">Revolutionizing Agriculture with AI</h2>
+        <p data-hi="एग्रोसुविधा कृत्रिम बुद्धिमत्ता, IoT और ब्लॉकचेन तकनीक को जोड़कर किसानों को वास्तविक समय की जानकारी, सब्सिडी पारदर्शिता और स्थायी कृषि समाधान प्रदान करता है।">
+           AgroSuvidha combines artificial intelligence, IoT, and blockchain technology to empower farmers with real-time insights, subsidy transparency, and sustainable farming solutions.
+        </p>
+    </section>
+
+    <!-- Scrolling Text Animation -->
+    <div class="scrolling-text-container" aria-live="polite">
+        <div class="scrolling-text-box">
+            <div class="scrolling-text" data-hi="हमारा अभिनव प्रोजेक्ट भारत में छोटे और सीमांत किसानों के भविष्य को बदलने के लिए AI, IoT और ब्लॉकचेन की शक्ति का उपयोग करता है। AI-संचालित माइक्रोक्लाइमेट पूर्वानुमान, ब्लॉकचेन-आधारित स्मार्ट कॉन्ट्रैक्ट्स, AI-संचालित फसल विविधीकरण, ध्वनिक कीट पहचान और मिट्टी बहाली तकनीकों को एकीकृत करके, हम किसानों को वास्तविक समय की जानकारी, स्थायी समाधान और वित्तीय पारदर्शिता प्रदान करते हैं।">
+                Our innovative project harnesses the power of AI, IoT, and Blockchain to transform the future of small and marginal farmers in India. By integrating AI-powered microclimate prediction, blockchain-based smart contracts, AI-driven crop diversification, acoustic pest detection, and soil restoration technologies, we provide farmers with real-time insights, sustainable solutions, and financial transparency.
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="video-container">
+            <video controls autoplay muted loop playsinline aria-label="AgroSuvidha promotional video">
+                <source src="videos/agrosuvidha-promo.mp4" type="video/mp4">
+                <track kind="captions" src="videos/captions.vtt" srclang="en" label="English">
+                <span data-hi="आपका ब्राउज़र वीडियो का समर्थन नहीं करता।">Your browser does not support the video.</span>
+            </video>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 data-hi="लोग हमारे बारे में क्या कहते हैं">What People Say About Us</h2>
+        <div class="testimonial-carousel" aria-live="polite">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="user-image">
+                    <img src="images/rida.jpg" alt="Rida Khan">
+                </div>
+                <h3>Rida Khan</h3>
+                <div class="stars">★★★★★</div>
+                <p data-hi="एग्रोसुविधा ने सटीक भविष्यवाणियों और समय पर सब्सिडी के साथ मेरे कृषि व्यवसाय को बदल दिया!">
+                   AgroSuvidha transformed my farming business with accurate predictions and timely subsidies!
+                </p>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="user-image">
+                    <img src="images/tanishka.jpg" alt="Tanishka Gupta">
+                </div>
+                <h3>Tanishka Gupta</h3>
+                <div class="stars">★★★★★</div>
+                <p data-hi="AI कीट पहचान ने मेरी फसल को पूरी तरह से नष्ट होने से बचाया। अद्भुत तकनीक!">
+                   The AI pest detection saved my crops from complete destruction. Amazing technology!
+                </p>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="user-image">
+                    <img src="images/arpit.jpg" alt="Arpit Mathur">
+                </div>
+                <h3>Arpit Mathur</h3>
+                <div class="stars">★★★★☆</div>
+                <p data-hi="सब्सिडी वितरण अब पारदर्शी है और सीधे मेरे खाते में पहुंचती है। अब कोई बिचौलिए नहीं!">
+                   Subsidy distribution is now transparent and reaches directly to my account. No more middlemen!
+                </p>
+            </div>
+        </div>
+        
+        <button id="share-insights" class="btn-teal" data-hi="अपने विचार साझा करें">Share Your Insights</button>
+        
+        <!-- Testimonial Form -->
+        <div id="testimonial-form" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+            <div class="modal-content">
+                <button class="close" aria-label="Close modal">&times;</button>
+                <h3 id="modal-title" data-hi="अपना अनुभव साझा करें">Share Your Experience</h3>
+                <form id="new-testimonial">
+                    <div class="form-group">
+                        <label for="review-photo" data-hi="आपकी तस्वीर:">Your Photo:</label>
+                        <input type="file" id="review-photo" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-name" data-hi="आपका नाम:">Your Name:</label>
+                        <input type="text" id="review-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-stars" data-hi="रेटिंग:">Rating:</label>
+                        <select id="review-stars" required>
+                            <option value="5">★★★★★</option>
+                            <option value="4">★★★★☆</option>
+                            <option value="3">★★★☆☆</option>
+                            <option value="2">★★☆☆☆</option>
+                            <option value="1">★☆☆☆☆</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-comment" data-hi="आपकी समीक्षा:">Your Review:</label>
+                        <textarea id="review-comment" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-teal" data-hi="समीक्षा सबमिट करें">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="signup-options">
+        <div class="button-container">
+            <button id="farmer-signup" class="btn-green" data-hi="किसान के रूप में पंजीकरण करें">Sign up as a Farmer</button>
+            <button id="agromitra-signup" class="btn-cyan" data-hi="एग्रोमित्र के रूप में पंजीकरण करें">Signup as AgroMitra</button>
+        </div>
+    </section>
+
+    <!-- 3D Canvas -->
+    <div id="3d-container" aria-hidden="true"></div>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="js/3d-animations.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set all elements to English by default
+        document.documentElement.lang = 'en';
+        
+        // Store original English text in data-en attributes
+        document.querySelectorAll('[data-hi]').forEach(el => {
+            if (!el.hasAttribute('data-en')) {
+                el.setAttribute('data-en', el.textContent);
+            }
+        });
+
+        // Language toggle functionality
+        const languageBtn = document.getElementById('language-btn');
+        if (languageBtn) {
+            languageBtn.addEventListener('click', function() {
+                const currentLang = document.documentElement.lang;
+                const newLang = currentLang === 'en' ? 'hi' : 'en';
+                document.documentElement.lang = newLang;
+                
+                // Toggle between English and Hindi
+                document.querySelectorAll('[data-en], [data-hi]').forEach(el => {
+                    if (newLang === 'hi' && el.hasAttribute('data-hi')) {
+                        el.textContent = el.getAttribute('data-hi');
+                    } else if (el.hasAttribute('data-en')) {
+                        el.textContent = el.getAttribute('data-en');
+                    }
+                });
+                
+                // Update button text
+                if (newLang === 'hi') {
+                    this.textContent = this.getAttribute('data-en');
+                    this.setAttribute('aria-label', 'Change language to English');
+                } else {
+                    this.textContent = this.getAttribute('data-hi');
+                    this.setAttribute('aria-label', 'Change language to Hindi');
+                }
+            });
+        }
+
+        // Menu functionality
+        const menuBtn = document.getElementById('menu-btn');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', function() {
+                // Your menu toggle logic here
+            });
+        }
+
+        // Form submissions
+        document.getElementById('farmer-signup')?.addEventListener('click', function() {
+            window.location.href = 'farmer-signup.html';
+        });
+        
+        document.getElementById('agromitra-signup')?.addEventListener('click', function() {
+            window.location.href = 'agromitra-signup.html';
+        });
+        
+        // Testimonial form handling
+        const testimonialForm = document.getElementById('new-testimonial');
+        if (testimonialForm) {
+            testimonialForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Form submission logic
+            });
+        }
+    });
+    </script>
+</body>
+</html>

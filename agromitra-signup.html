@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroMitra Registration - AgroSuvidha</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .registration-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .registration-heading {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #008080;
+            font-size: 2rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #008080;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: #00FFFF;
+            color: #333;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            grid-column: span 2;
+        }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            grid-column: span 2;
+        }
+        
+        @media (max-width: 768px) {
+            .registration-container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-submit,
+            .login-link {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h1 class="registration-heading">AgroMitra Registration</h1>
+        <form id="agromitra-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="agromitra-name">Full Name:</label>
+                    <input type="text" id="agromitra-name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="agromitra-phone">Phone Number:</label>
+                    <input type="tel" id="agromitra-phone" class="form-control" required pattern="[0-9]{10}">
+                    <small class="form-hint">(10 digit mobile number)</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="agromitra-photo">Profile Photo:</label>
+                    <input type="file" id="agromitra-photo" class="form-control" accept="image/*" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="agromitra-email">Email Address:</label>
+                    <input type="email" id="agromitra-email" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="agromitra-dob">Date of Birth:</label>
+                    <input type="date" id="agromitra-dob" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="agromitra-address">Address:</label>
+                    <textarea id="agromitra-address" class="form-control" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="agromitra-pincode">PIN Code:</label>
+                    <input type="text" id="agromitra-pincode" class="form-control" required pattern="[0-9]{6}">
+                    <small class="form-hint">(6 digit postal code)</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="agromitra-gst">GST Number:</label>
+                    <input type="text" id="agromitra-gst" class="form-control" required pattern="[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[0-9A-Z]{1}Z[0-9A-Z]{1}">
+                    <small class="form-hint">(Format: 22ABCDE1234F1Z5)</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="agromitra-aadhar">Aadhar Number:</label>
+                    <input type="text" id="agromitra-aadhar" class="form-control" required pattern="[0-9]{12}">
+                    <small class="form-hint">(12 digit number)</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="agromitra-pan">PAN Number:</label>
+                    <input type="text" id="agromitra-pan" class="form-control" required pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}">
+                    <small class="form-hint">(Format: ABCDE1234F)</small>
+                </div>
+                
+                <button type="submit" class="btn-submit">Register as AgroMitra</button>
+                <p class="login-link">Already registered? <a href="agromitra-login.html">Login here</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('agromitra-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const agromitraData = {
+                name: document.getElementById('agromitra-name').value,
+                phone: document.getElementById('agromitra-phone').value,
+                photo: document.getElementById('agromitra-photo').files[0],
+                email: document.getElementById('agromitra-email').value,
+                dob: document.getElementById('agromitra-dob').value,
+                address: document.getElementById('agromitra-address').value,
+                pincode: document.getElementById('agromitra-pincode').value,
+                gst: document.getElementById('agromitra-gst').value,
+                aadhar: document.getElementById('agromitra-aadhar').value,
+                pan: document.getElementById('agromitra-pan').value
+            };
+            
+            // In a real app, you would send this to your backend
+            console.log('AgroMitra data:', agromitraData);
+            
+            // Save to localStorage for demo purposes
+            localStorage.setItem('agromitraData', JSON.stringify(agromitraData));
+            
+            // Redirect to AgroMitra page
+            window.location.href = 'agromitra-dashboard.html';
+        });
+    </script>
+</body>
+</html>

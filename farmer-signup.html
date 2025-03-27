@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Registration - AgroSuvidha</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .registration-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .registration-heading {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #008080;
+            font-size: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #008080;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: #90EE90;
+            color: #333;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .registration-container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h1 class="registration-heading">Farmer Registration</h1>
+        <form id="farmer-form">
+            <div class="form-group">
+                <label for="farmer-name">Full Name:</label>
+                <input type="text" id="farmer-name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="farmer-phone">Phone Number:</label>
+                <input type="tel" id="farmer-phone" class="form-control" required pattern="[0-9]{10}">
+                <small class="form-hint">(10 digit mobile number)</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="farmer-address">Address:</label>
+                <textarea id="farmer-address" class="form-control" rows="3" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="farmer-photo">Profile Photo:</label>
+                <input type="file" id="farmer-photo" class="form-control" accept="image/*" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="farmer-dob">Date of Birth:</label>
+                <input type="date" id="farmer-dob" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="farmer-pan">PAN Number:</label>
+                <input type="text" id="farmer-pan" class="form-control" required pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}">
+                <small class="form-hint">(Format: ABCDE1234F)</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="farmer-aadhar">Aadhar Number:</label>
+                <input type="text" id="farmer-aadhar" class="form-control" required pattern="[0-9]{12}">
+                <small class="form-hint">(12 digit number)</small>
+            </div>
+            
+            <button type="submit" class="btn-submit">Register</button>
+        </form>
+        <p class="login-link">Already registered? <a href="farmer-login.html">Login here</a></p>
+    </div>
+
+    <script>
+        document.getElementById('farmer-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const farmerData = {
+                name: document.getElementById('farmer-name').value,
+                phone: document.getElementById('farmer-phone').value,
+                address: document.getElementById('farmer-address').value,
+                dob: document.getElementById('farmer-dob').value,
+                pan: document.getElementById('farmer-pan').value,
+                aadhar: document.getElementById('farmer-aadhar').value,
+                photo: document.getElementById('farmer-photo').files[0]
+            };
+            
+            // In a real app, you would send this to your backend
+            console.log('Farmer data:', farmerData);
+            
+            // Save to localStorage for demo purposes
+            localStorage.setItem('farmerData', JSON.stringify(farmerData));
+            
+            // Redirect to farmer page
+            window.location.href = 'farmer-dashboard.html';
+        });
+    </script>
+</body>
+</html>
